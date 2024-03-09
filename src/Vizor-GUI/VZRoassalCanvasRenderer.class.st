@@ -21,7 +21,7 @@ VZRoassalCanvasRenderer class >> defaultLayout [
 { #category : #interacting }
 VZRoassalCanvasRenderer >> addCanvasInteractions [
 	highlighter := RSHighlightable red.
-	elasticBox := ((((Smalltalk version splitOn: $.) at: 1) withoutPrefix: 'Pharo') asInteger >= 11) ifTrue: [ RSElasticBoxInteraction new ] ifFalse: [ RSElasticBox new ].
+	elasticBox := ((((Smalltalk version splitOn: $.) at: 1) withoutPrefix: 'Pharo') asInteger >= 9) ifTrue: [ RSElasticBoxInteraction new ] ifFalse: [ RSElasticBox new ].
 	elasticBox
 		when: RSSelectionStartEvent do: [ :evt |
 			highlighter unhighlightRecordedShapes: evt canvas ];
